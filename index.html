@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    html {
+  scroll-behavior: smooth;
+}
     * {
       box-sizing: border-box;
     }
@@ -15,7 +18,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      background: linear-gradient(to right, #1c2d26, #0a3538);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -25,27 +28,28 @@
     }
 
     .form-card {
-      background: white;
+      background:  linear-gradient(to right, #13201ab9, #08292bb6);
       padding: 40px;
       border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 20px 25px rgba(61, 66, 60, 0.578);
       width: 100%;
-      max-width: 500px;
+      max-width: 600px;
       margin-top: 60px;
+      
     }
 
     h2 {
       margin-bottom: 20px;
       font-size: 28px;
       text-align: center;
-      color: #333;
+      color: #7bdcff;
     }
 
     label {
       font-weight: 600;
       margin-bottom: 8px;
       display: block;
-      color: #444;
+      color: #ffffff;
     }
 
     input,
@@ -69,7 +73,7 @@
     button {
       width: 100%;
       padding: 14px;
-      background-color: #007bff;
+      background-color: #025325;
       color: white;
       font-size: 16px;
       border: none;
@@ -80,7 +84,7 @@
     }
 
     button:hover {
-      background-color: #0056b3;
+      background-color: #035879;
       transform: scale(1.02);
     }
 
@@ -100,25 +104,25 @@
     }
 
     .custom-info {
+      width: 100%;
       margin-top: 30px;
-      background-color: #ffffffcc;
+      background-color:linear-gradient(to right, #13201ab9, #08292bb6);
       padding: 25px;
       border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.07);
-      max-width: 600px;
+      box-shadow: 0 6px 18px rgba(117, 110, 110, 0.356);
       text-align: center;
       font-size: 15.5px;
-      color: #333;
+      color: #ffffff;
     }
 
     .custom-info h3 {
       margin-bottom: 12px;
       font-size: 22px;
-      color: #0056b3;
+      color: #7bdcff;
     }
 
     .custom-info a {
-      color: #007bff;
+      color: #4386cd;
       text-decoration: none;
       font-weight: 600;
     }
@@ -153,8 +157,7 @@
       padding: 20px 30px;
       text-align: center;
       width: 100%;
-      max-width: 800px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.603);
     }
 
     .star-rating {
@@ -162,7 +165,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 5px;
+      gap: 15px;
       font-size: 1.8em;
       margin: 10px 0 25px;
     }
@@ -181,12 +184,200 @@
     .star-rating input:checked ~ label,
     .star-rating label:hover,
     .star-rating label:hover ~ label {
-      color: #ffc107;
+      color: #ff8f07;
     }
+
+/* Header */
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background: linear-gradient(to right, #2d3a48, #43586f);
+  color: white;
+  width: 100%;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.603);
+  position: relative;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Hamburger for mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Top nav for desktop */
+header nav {
+  display: flex;
+  gap: 25px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: #ffdd57;
+}
+
+/* Side Nav */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(to right, #2d3a48, #43586f);
+  color: white;
+  padding: 60px 20px;
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.side-nav.open {
+  left: 0;
+}
+
+.side-nav a {
+  display: block;
+  color: white;
+  font-size: 18px;
+  margin: 15px 0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.side-nav a:hover {
+  color: #ffdd57;
+}
+
+/* Overlay for side nav */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 998;
+}
+
+#overlay.active {
+  display: block;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  font-size: 30px;
+  background-color: #274a28;
+  color: white;
+  border: none;
+  width: 45px;
+  height: 50px;
+  display: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(8, 63, 15, 0.463);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#backToTop.show {
+  display: block;
+  animation: fadeBounce 0.6s ease forwards;
+}
+
+#backToTop:hover {
+  background-color: #265486;
+  transform: scale(1.1);
+}
+@keyframes fadeBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
 
   </style>
 </head>
 <body>
+  <button id="backToTop" title="Back to Top">↑</button>
+    <!-- Header -->
+
+
+  <!-- Overlay for mobile nav -->
+<div id="overlay" onclick="closeNav()"></div>
+
+<!-- Header -->
+<header>
+  <div class="logo">WebDev Solutions</div>
+
+  <nav>
+    <a href="">home</a>
+    <a href="https://prayu12345.github.io/codealpha_portfolio/">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="f&q.html">F&Q</a>
+    <a href="#contact-footer">Contact</a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleNav()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</header>
+
+<!-- Side Navigation (for mobile) -->
+<div class="side-nav" id="sideNav">
+  <a href="">Home</a>
+  <a href="https://prayu12345.github.io/codealpha_portfolio/">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="f&q.html">F&Q</a>
+  <a href="#contact-footer">Contact</a>
+</div>
+
+
+  <!-- Header End-->
 
   <div class="custom-info">
     <h3>Need a Website or Project Assistance?</h3>
@@ -231,7 +422,7 @@
     <div class="message" id="formMessage"></div>
   </form>
 
-  <footer>
+  <footer id="contact-footer">
     <div class="social-links">
       <a href="https://www.instagram.com/aae__ayushh__/?igsh=MnJ4amt3ZzZpbHVy#" target="_blank" title="Instagram">
         <i class="fab fa-instagram fa-lg"></i>
@@ -245,12 +436,65 @@
       <a href="https://www.linkedin.com/in/ravi-raj2505/" target="_blank" title="LinkedIn">
         <i class="fab fa-linkedin fa-lg"></i>
       </a>
-      <a href="https://prayu12345.github.io/codealpha_portfolio/" target="_blank" title="portfolio">
+      <a href="https://prayu12345.github.io/codealpha_portfolio/" target="_blank" title="Portfolio">
         <i class="fa-sharp-duotone fa-solid fa-circle-user"></i>
       </a>
     </div>
+  
+    <div style="margin-top: 20px; max-width: 100%; text-align: center; height: 100%;">
+      <h4 style="color: #c7f1f8; margin-bottom: 10px;">Our Location</h4>
+      <div style="border-radius: 12px; overflow: hidden; max-width: 100%; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.675);">
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.123456789!2d77.123456!3d28.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce1234567890%3A0xabcdef1234567890!2sKnowledge%20Park%20II%2C%20Greater%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1612345678901!5m2!1sen!2sin"
+        width="600"
+        height="250"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      
+      </div>
+    </div>
   </footer>
+  
 
+
+  <script>
+    function toggleNav() {
+      document.getElementById('sideNav').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('active');
+    }
+  
+    function closeNav() {
+      document.getElementById('sideNav').classList.remove('open');
+      document.getElementById('overlay').classList.remove('active');
+    }
+
+    document.querySelectorAll('.side-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      closeNav();
+    });
+  });
+
+  const backToTopBtn = document.getElementById('backToTop');
+
+  window.onscroll = () => {
+    if (window.scrollY > 200) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  };
+
+  backToTopBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+
+  </script>
+  
+  
   <script>
     const form = document.getElementById('contactForm');
     const messageBox = document.getElementById('formMessage');
