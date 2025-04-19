@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs | Ayush Web Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #1c2d26, #0a3538);
+      color: #333;
+    }
+
+    header {
+        background: linear-gradient(to right, #2d3a48, #43586f);
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 60px auto;
+      background:  linear-gradient(to right, #13201ab9, #08292bb6);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.852);
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #6897ca;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+      cursor: pointer;
+    }
+
+    .faq-item h3 {
+      font-size: 18px;
+      color: #c6c6c6;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-item p {
+    color: #d2f5fff5;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-top: 10px;
+      display: none;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.active p {
+      display: block;
+    }
+
+    .faq-item i {
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active i {
+      transform: rotate(180deg);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(to right, #2d3a48, #43586f);
+      color: white;
+      margin-top: 60px;
+    }
+
+    .contact-links {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .contact-links a {
+      color: #90eeff;
+      font-size: 22px;
+      transition: transform 0.2s, color 0.3s;
+    }
+
+    .contact-links a:hover {
+      color: #ffdd57;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px;
+        margin: 30px 15px;
+      }
+
+      header {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Frequently Asked Questions (FAQs)
+  </header>
+
+  <div class="container">
+    <h2>How Can I Help You?</h2>
+
+    <div class="faq-item">
+      <h3>💡 Who are you, and what do you do? <i class="fas fa-chevron-down"></i></h3>
+      <p>I'm Ayush, a passionate web developer helping students, startups, and individuals with modern, responsive websites, college project support, and online presence solutions.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>🎓 Can you help with college projects or assignments? <i class="fas fa-chevron-down"></i></h3>
+      <p>Absolutely! I help students with HTML/CSS/JS websites, responsive designs, portfolios, landing pages, and any kind of front-end project you need for academic submission.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>🌐 What type of websites can you create? <i class="fas fa-chevron-down"></i></h3>
+      <p>From personal portfolios and small business sites to landing pages and project showcases. I specialize in fast, responsive, and beautiful web design using HTML, CSS, JavaScript, and more.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>💰 Do you charge for your work? <i class="fas fa-chevron-down"></i></h3>
+      <p>Yes, but my pricing is super friendly and flexible — especially for students and startups. I focus on giving value while making your ideas a reality.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>⏱️ How fast can you deliver a project? <i class="fas fa-chevron-down"></i></h3>
+      <p>Depending on the complexity, I can deliver simple projects in 1–3 days. Urgent deadlines? Let’s talk — I’m here to support!</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📩 How can I contact you? <i class="fas fa-chevron-down"></i></h3>
+      <p>Simply fill out the form That i Given You— and also message me anytime on WhatsApp, Instagram, or Email. I'm just a click away — scroll down and let's connect! 🚀
+
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Connect with Me</p>
+    <div class="contact-links">
+      <a href="https://www.instagram.com/aae__ayushh__/" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/919973307526" target="_blank" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:ayushweb.help@gmail.com" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/ravi-raj2505/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
+</body>
+</html>
