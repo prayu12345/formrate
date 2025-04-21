@@ -503,7 +503,7 @@ header nav a:hover {
 
 
   </script>
-  
+
   
   <script>
     const form = document.getElementById('contactForm');
@@ -556,7 +556,7 @@ form.addEventListener('submit', function (e) {
       field.style.border = ''; // Reset border if filled
     }
   });
-
+  
   if (!formValid) {
     messageBox.textContent = "Please fill out all required fields.";
     messageBox.className = "message error";
@@ -564,7 +564,7 @@ form.addEventListener('submit', function (e) {
     setTimeout(() => (messageBox.style.display = "none"), 4000);
     e.preventDefault(); // Prevent form submission if validation fails
   }
-});
+}); 
 
   </script>
 
