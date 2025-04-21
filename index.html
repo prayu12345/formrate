@@ -51,6 +51,17 @@
       display: block;
       color: #ffffff;
     }
+    input:invalid, textarea:invalid {
+  border: 2px solid red;
+}
+
+input:required:invalid, textarea:required:invalid {
+  background-color: #ffdddd;
+}
+
+input:valid, textarea:valid {
+  border: 2px solid green;
+}
 
     input,
     textarea {
@@ -459,7 +470,6 @@ header nav a:hover {
   </footer>
   
 
-
   <script>
     function toggleNav() {
       document.getElementById('sideNav').classList.toggle('open');
@@ -529,6 +539,33 @@ header nav a:hover {
       messageBox.style.display = "block";
       setTimeout(() => (messageBox.style.display = "none"), 4000);
     });
+/////////////////////////////////////////////////////////////    ////////////////////////////////////////////////////////////////////////////////////////
+const form = document.getElementById('contactForm');
+const messageBox = document.getElementById('formMessage');
+
+form.addEventListener('submit', function (e) {
+  let formValid = true;
+  
+  // Check if all required fields are filled
+  const requiredFields = form.querySelectorAll('[required]');
+  requiredFields.forEach(field => {
+    if (!field.value.trim()) {
+      formValid = false;
+      field.style.border = '2px solid red'; // Add red border
+    } else {
+      field.style.border = ''; // Reset border if filled
+    }
+  });
+
+  if (!formValid) {
+    messageBox.textContent = "Please fill out all required fields.";
+    messageBox.className = "message error";
+    messageBox.style.display = "block";
+    setTimeout(() => (messageBox.style.display = "none"), 4000);
+    e.preventDefault(); // Prevent form submission if validation fails
+  }
+});
+
   </script>
 
 </body>
